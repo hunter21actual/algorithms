@@ -40,20 +40,6 @@ void funk(int ir, int iy, int ig, int r1, int r2, int del)
     digitalWrite(r2, LOW);
 }
 
-void toggle()
-{
-    for(int i = 1; i <= 9; ++i){
-        digitalWrite(i, HIGH);
-    }
-    
-    delay(100);
-
-    for(int i = 1; i <= 9; ++i){
-        digitalWrite(i, LOW);
-    }
-    delay(100);
-}
-
 // Signal to LED Mapping
 // signal 1 = 3,2,1
 // signal 2 = 6,5,4
@@ -94,8 +80,5 @@ void loop() {
     else{
       funk(3,2,1,6,9,arr[i][2]*100);
     }
-  }
-
-  for(int i = 0; i < 10; ++i)
-    toggle();   
+  }  
 }
