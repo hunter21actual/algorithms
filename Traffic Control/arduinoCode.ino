@@ -1,6 +1,7 @@
 // Density and Priority Calculations
 int arr[5][6] = {{80,60,30,2,3,1},{90,50,20,1,3,2},{30,20,10,3,2,1},{80,50,10,2,1,3},{90,70,60,3,1,2}};
 
+// Initialisation
 void setup() {
   pinMode(9, OUTPUT);
   pinMode(8, OUTPUT);
