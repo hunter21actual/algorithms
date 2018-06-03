@@ -1,3 +1,6 @@
+# Iteartive FFT
+# ideally array length should be a power of 2
+# if it isn't a power of 2, zeros are padded accordingly
 from math import * 
 	
 def reverse_bit(n, b):
@@ -15,6 +18,7 @@ def reverse_bit(n, b):
 def is_power_of_two(n):
 	return not (n & (n-1))
 
+# Calculates next higher power of 2 greater than num
 def next_pow(num):
 	i = 0
 	while(num > 2**i):
@@ -22,16 +26,19 @@ def next_pow(num):
 
 	return i
 
+# Performs index bit reversal and returns an Array
 def bit_reverse_copy(arr):
 	if(is_power_of_two(len(arr))):
 		n = len(arr)
 		b = int(log2(n))
 	else:
+		# Zero padding to make the array length a power  of 2
 		b = next_pow(len(arr))
 		n = 2**b
 		for i in range(n - len(arr)):
 			arr.append(0)
-
+	
+	# Create an array of length n
 	A = [0]*n
 	for k in range(n):
 		A[reverse_bit(k, b)] = arr[k]
@@ -59,11 +66,14 @@ def fft(arr, inv = 0):
 	A = [round(num.real, 2) + round(num.imag, 2) * 1j for num in A]
 	return A
 
-arr = [i+1 for i in range(0,5)]
+arr = [i+1 for i in range(0,8)]
+
+# FFT on sequence
 ans = fft(arr)
 for f in ans:
 	print(f)
 
+# Inverse FFT to verify sequence
 back = fft(ans, 1)
 print('\n')
 for samp in back:
