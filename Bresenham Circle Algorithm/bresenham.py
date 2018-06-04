@@ -1,12 +1,17 @@
 from pyx import *
 from PIL import Image
 
+# Set the image resolution
 im = Image.new("RGB", (1000, 1000))
 
 # (x0, y0) denote centre of the circle
 # r denotes radius of circle
-def draw_circle(x0 = 0, y0 = 0, r):
 
+def draw_circle(x0 = 0, y0 = 0, r):
+# WARNING :- Please ensure that you select appropraite values for
+# the x0, y0 and r so as to not cause index error. 
+# The circle should lie within the image.
+# Remember that an image is a 2D matrix .
 	x = r - 1
 	y = 0
 	dx = 1
