@@ -7,7 +7,7 @@ im = Image.new("RGB", (1000, 1000))
 # (x0, y0) denote centre of the circle
 # r denotes radius of circle
 
-def draw_circle(x0 = 0, y0 = 0, r):
+def draw_circle(r, x0 = 0, y0 = 0):
 # WARNING :- Please ensure that you select appropraite values for
 # the x0, y0 and r so as to not cause index error. 
 # The circle should lie within the image.
@@ -46,7 +46,7 @@ def draw_circle(x0 = 0, y0 = 0, r):
 			dx += 2
 			e += dx - (r << 1)
 
-draw_circle(500,500,256)
+draw_circle(256,500,500)
 
 # Get the image in your directory in the following three formats
 c = canvas.canvas()
