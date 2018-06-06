@@ -6,13 +6,13 @@
 
 # Array size 	False positive prob. (in %)
 
-# 	60					  23.957
-#	110					  9.364
-#	400					  0.908
+# 	60		23.957
+#	110		9.364
+#	400		0.908
 
 # No. of insertions  = 20 (fixed)
 # No. of hash functions = 2 (fixed)
-N = 60
+N = 400
 
 from random import shuffle
 
