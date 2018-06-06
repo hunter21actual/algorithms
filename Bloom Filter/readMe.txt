@@ -7,6 +7,16 @@ Basic description from Wikipedia
 A wonderful video explaining things:
 https://www.youtube.com/watch?v=qBTdukbzc78
 
+Some formulae:
+
+optimal no.of hash functions k = (N/m)*ln(2)  
+# ln equals log base e (i.e) Natural log
+
+P(false positive) = (1 - (1 - (1/N)^(m*k)))^k
+# m = no. of elements to be inserted
+# N = size of bit array
+# k = no. of hash functions
+
 For my implimentation i have used:
 
 1. 400 bit boolean array. N = 400.
@@ -21,3 +31,4 @@ Ideally the hash functions sould be independant to avoid collisons as much as po
 
 Further reading:
 https://en.wikipedia.org/wiki/Bloom_filter
+https://www.geeksforgeeks.org/bloom-filters-introduction-and-python-implementation/
