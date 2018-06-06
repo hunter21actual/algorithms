@@ -18,25 +18,33 @@ from random import shuffle
 
 class BloomFilter:
 	def __init__(self):
+		# Bit array
 		self.arr = [0]*N
-
+	
+	# First hash function
+	# sum of the ascii values of the letters at even places mod N
 	def h1(self, word):
 		return sum(ord(word[i]) for i in range(0, len(word), 2)) % N
-
+	
+	# Second hash function
+	# sum of the ascii values of the letters at odd places mod N
 	def h2(self, word):
 		return sum(ord(word[i]) for i in range(1, len(word), 2)) % N
-
+	
+	# Inserts word into bloom filter
 	def insert(self, word):
 		self.arr[self.h1(word)] = 1
 		self.arr[self.h2(word)] = 1
-
+	
+	# Check if the word is present or not
 	def lookup(self, word):
 		if(self.arr[self.h1(word)] and self.arr[self.h2(word)]):
 			return True
 			#return "{} may be present.".format(word)
 		#return "{} is not present".format(word)
 		return False
-
+	
+	# Counts the no. of set bits in the array
 	def ones(self):
 		return sum(self.arr)
 
