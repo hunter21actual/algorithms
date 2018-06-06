@@ -31,6 +31,8 @@ class BloomFilter:
 	def h2(self, word):
 		return sum(ord(word[i]) for i in range(1, len(word), 2)) % N
 	
+	# Note:- try to make hash functions independant
+	
 	# Inserts word into bloom filter
 	def insert(self, word):
 		self.arr[self.h1(word)] = 1
