@@ -1,7 +1,5 @@
 from fractions import gcd
 
-# A HUGE SHOUTOUT TO EDDIE WOO!! YOU'RE THE BEST
-
 # 1. Pick 2 prime nos. p and q
 
 p = 239 
